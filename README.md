@@ -1,4 +1,4 @@
-smart_scale: Connected Scale for weight measurement
+SmartScale: Connected Scale for weight measurement
 ======
 
 WiFi connected scale.
