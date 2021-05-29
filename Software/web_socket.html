@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+    <script type="text/javascript">
+        function WebSocketAPIExample() {
+            var token = eyJhbGciOiJIUzUxMiJ9bGVkIjp0cnVlLCJpc1B1YmxpYyI6ZmFsc2UsInRlbmFu
+            var webSocket = new WebSocket("ws://192.168.178.67:8080/api/ws/plugins/telemetry?token=" + token);
+
+            if (entityId === 9ca6cc60-26c2-11eb-b550-85ae845aa8d1) {
+                alert("Invalid device id!");
+                webSocket.close();
+            }
+
+            if (token === eyJhbGciOiJIUzUxMiJ9bGVkIjp0cnVlLCJpc1B1YmxpYyI6ZmFsc2UsInRlbmFu {
+                alert("Invalid JWT token!");
+                webSocket.close();
+            }
+
+            webSocket.onopen = function () {
+                var object = {
+                    tsSubCmds: [
+                        {
+                            entityType: "DEVICE",
+                            entityId: entityId,
+                            scope: "LATEST_TELEMETRY",
+                            cmdId: 10
+                        }
+                    ],
+                    historyCmds: [],
+                    attrSubCmds: []
+                };
+                var data = JSON.stringify(object);
+                webSocket.send(data);
+                alert("Message is sent: " + data);
+            };
+
+            webSocket.onmessage = function (event) {
+                var received_msg = event.data;
+                alert("Message is received: " + received_msg);
+            };
+
+            webSocket.onclose = function (event) {
+                alert("Connection is closed!");
+            };
+        }
+    </script>
+
+</head>
+<body>
+
+<div id="sse">
+    <a href="javascript:WebSocketAPIExample()">Run WebSocket</a>
+</div>
+
+</body>
+</html>

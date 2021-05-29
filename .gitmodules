@@ -1,0 +1,3 @@
+[submodule "Software/mokka"]
+	path = Software/mokka
+	url = git@gitlab.com:Serg_Ey/aws-mokka.git
