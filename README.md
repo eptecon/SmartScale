@@ -15,6 +15,6 @@ The data from the scale is sent over UART to ESP32. ESP32 is also able to config
 
 ## Software
 
-Immediately after connecting, the device starts to send the measured weights to the cloud service ([GlueLogics](https://github.com/eptecon/gluelogics)) enabling analytics for your working environment, even without invasive notifications.
+Immediately after connecting with a server over WLAN, the device starts to send the measured weights to the cloud service ([GlueLogics](https://github.com/eptecon/gluelogics)) enabling analytics for your working environment, even without invasive notifications.
 
 ---
